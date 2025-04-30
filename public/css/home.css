@@ -1,0 +1,288 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #343a40; /* Dark background */
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-buttons a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons a:hover {
+  background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f8f9fa; /* Light background */
+  color: #555;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem; /* Add some space above the footer */
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.pagination .btn {
+  padding: 8px 12px;
+  background: #867373;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination .btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  /* ... other styles ... */
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9rem; /* Slightly smaller font on mobile */
+  }
+  /* ... other styles ... */
+} 
+
+/* Responsive adjustments for Navbar */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  nav h2 {
+      margin-bottom: 0.5rem;
+  }
+
+  .nav-buttons {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .nav-buttons a {
+      margin: 0.3rem 0;
+  }
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto; /* Added top margin for better spacing */
+  background-color: #ffffffcc; /* Added a semi-transparent white background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+h1 {
+  margin-bottom: 1.5rem; /* Increased bottom margin */
+  text-align: center;
+  color: #2c3e50;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+.search-box {
+  position: relative;
+}
+.search-box input {
+  padding: 0.6rem 2.5rem 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%; /* Make search box take full width on smaller screens */
+  max-width: 300px; /* Limit maximum width */
+}
+.search-box i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+.filter-box select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%; /* Make filter box take full width on smaller screens */
+  max-width: 200px; /* Limit maximum width */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Slightly stronger shadow */
+  background-color: white; /* Solid white background for table */
+}
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+th {
+  background-color: #f8f9fa;
+  color: #333; /* Darker text for header */
+  font-weight: bold; /* Make header text bold */
+}
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2; /* Slightly darker even rows */
+}
+td:last-child {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-start; /* Align buttons to the start */
+}
+img {
+  width: 40px; /* Slightly smaller image */
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle; /* Align image with text */
+  margin-right: 0.5rem; /* Add some space after the image */
+}
+.student-info {
+  display: flex;
+  align-items: center;
+}
+.btn {
+  padding: 0.5rem 1rem; /* Slightly more padding */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease-in-out; /* Smoother transition */
+}
+.btn.edit {
+  background-color: #28a745; /* Green edit button */
+}
+.btn.edit:hover {
+  background-color: #1e7e34;
+}
+.btn.delete {
+  background-color: #dc3545; /* Red delete button */
+}
+.btn.delete:hover {
+  background-color: #c82333;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.pagination button {
+  padding: 0.6rem 1.2rem; /* Slightly larger buttons */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.pagination button:hover {
+  background-color: #007bff; /* Blue hover for pagination */
+  color: white;
+  border-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box input, .filter-box select {
+    width: 100%;
+    max-width: none;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    background: #fff;
+  }
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    font-size: 0.9rem; /* Slightly smaller font on mobile */
+  }
+  td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #555; /* Slightly darker label */
+  }
+  td:last-child {
+    flex-direction: column; /* Stack buttons on mobile */
+    align-items: stretch;
+    gap: 0.3rem;
+  }
+  .btn {
+    width: 100%;
+  }
+  img {
+    margin-right: 0.3rem;
+  }
+}

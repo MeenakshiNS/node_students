@@ -1,0 +1,65 @@
+extends index
+
+block content
+  link(rel="stylesheet", href="/css/home.css")
+  main
+    h1 All Students
+
+    .controls
+      .search-box
+        input(type="text", placeholder="Search students...")
+        i.fas.fa-search
+      .filter-box
+        select
+          option(value="all") All
+          option(value="a-m") A - M
+          option(value="n-z") N - Z
+
+    table
+      thead
+        tr
+          th Image
+          th Name
+          th Phone
+          th Date of Birth
+          th Class
+          th Category
+          th Marks
+          th Place
+          th Actions
+      tbody
+        each student in students
+          tr
+            td(data-label="Image")
+              img(src=`https://i.pravatar.cc/50?img=${student.image}`, alt=student.name)
+            td(data-label="Name")= student.name
+            td(data-label="Phone")= student.phone
+            td(data-label="Date of Birth")= new Date(student.dateOfBirth).toLocaleDateString()
+            td(data-label="Class")= student.class
+            td(data-label="Category")= student.category
+            td(data-label="Marks")= student.marks
+            td(data-label="Place")
+              p= student.address.city
+            td(data-label="Actions")
+              button.btn.edit Edit
+              button.btn.delete Delete
+
+    .pagination
+      if currentPage > 1
+        a(href=`?page=${currentPage - 1}&limit=10`).btn &laquo;
+
+      each val in [...Array(totalPages).keys()]
+        - const page = val + 1
+        if page === currentPage
+          button.btn.active= page
+        else
+          a(href=`?page=${page}&limit=10`).btn= page
+
+      if currentPage < totalPages
+        a(href=`?page=${currentPage + 1}&limit=10`).btn &raquo;
+//-  .pagination
+//-       button &laquo;
+//-       button 1
+//-       button 2
+//-       button 3
+//-       button &raquo;
